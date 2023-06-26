@@ -1,0 +1,10 @@
+projection;
+//strict ( 2 );
+
+define behavior for ZC_EMPLOYEE_VIEW alias Employee
+use etag
+{
+  use create;
+  use update;
+  use delete;
+}

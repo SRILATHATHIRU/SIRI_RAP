@@ -1,0 +1,19 @@
+projection;
+//strict ( 1 );
+
+define behavior for ZRAP_C_CLAIM_HDR alias Header
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _Item { create; }
+}
+
+define behavior for ZRAP_C_CLAIM_ITM alias Item
+{
+  use update;
+  use delete;
+
+  use association _Header;
+}

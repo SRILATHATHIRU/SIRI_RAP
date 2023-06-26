@@ -1,0 +1,5 @@
+@EndUserText.label: 'Claims service'
+define service ZRAP_CLAIM_SRV {
+  expose ZRAP_C_CLAIM_HDR as Header;
+  expose ZRAP_C_CLAIM_ITM as Item;
+}

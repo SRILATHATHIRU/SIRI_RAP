@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition for employee'
+define service ZUI_C_EMPLOYEE {
+  expose ZC_EMPLOYEE_VIEW as Employee;
+}

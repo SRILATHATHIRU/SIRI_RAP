@@ -1,0 +1,5 @@
+CLASS zcl_rap_claim_itm DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zrap_i_claim_hdr.
+ENDCLASS.
+
+CLASS zcl_rap_claim_itm IMPLEMENTATION.
+ENDCLASS.

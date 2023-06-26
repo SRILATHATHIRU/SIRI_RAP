@@ -1,0 +1,71 @@
+unmanaged implementation in class zcl_rap_claim_hdr unique;
+strict;
+
+define behavior for ZRAP_I_CLAIM_HDR alias Header
+implementation in class zcl_rap_claim_hdr unique
+//persistent table zrap_claim_hdr
+lock master
+authorization master ( global )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+
+ // field ( readonly ) claimnumber;
+  mapping for zrap_claim_hdr
+
+  {
+
+  ClaimNumber = vbeln;
+  ClaimType   =   crtyp;
+  Customer    = kunag ;
+  Vin =  zuonr;
+  SalesOrg =  vkorg;
+  DistChannel =  vtweg;
+  Division =  spart;
+  BundleNumber =  bundle_number;
+  Currency  =  waerk;
+  RefNumber = xblnr ;
+  Batch =  batch;
+  ClaimDate =  fkdat;
+  TransmissionDate =  btcdt;
+  ClaimSource =  crsrc;
+
+  }
+
+  association _Item { create ( features : instance ); }
+}
+
+define behavior for ZRAP_I_CLAIM_ITM alias Item
+implementation in class Zcl_RAP_CLAIM_ITM unique
+//persistent table zrap_claim_itm
+lock dependent by _Header
+authorization dependent by _Header
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) ClaimNumber;
+  mapping for zrap_claim_itm
+  {
+
+    ClaimNumber = vbeln;
+    Posnr       = posnr;
+    BellingDate = stadat;
+    Material = matid;
+    Quantity = fkimg;
+    Uom = uomid;
+    Plant = werks;
+    Zvin = zvin;
+    ModelYear = zmodyr;
+    ZTrim = ztrim;
+    Zip = zpyzip;
+    SellSource = zprocess_srce;
+    IncentiveCode = zinctvcd;
+    SiteCode = zsitecd;
+    Country = zdest_cntry;
+    Payee = zpayee;
+  }
+  association _Header;
+}

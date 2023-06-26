@@ -1,0 +1,4 @@
+@EndUserText.label: 'Business Service for Demo view'
+define service ZUI_RAP_DEMO_VIEW {
+  expose ZI_RAP_DEMO_VIEW;
+}

@@ -1,0 +1,94 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Claim Item', 
+    typeNamePlural: 'Claims Item'
+}
+}    
+
+annotate view ZRAP_C_CLAIM_ITM
+    with 
+{
+@UI.facet: [ { id:              'Item',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Item',
+                 position:      10 }
+               ]   
+@UI: {
+          lineItem:       [ { position: 20, importance: #MEDIUM } ],
+          identification: [ { position: 20 } ] }                   
+@EndUserText.label: 'ClaimItem'     
+     Posnr;
+@EndUserText.label: 'Billing Date'     
+@UI: {
+          lineItem:       [ { position: 30, importance: #MEDIUM } ],
+          identification: [ { position: 30 } ] }   
+    BellingDate;
+@EndUserText.label: 'Material' 
+@UI: {
+          lineItem:       [ { position: 40, importance: #MEDIUM } ],
+          identification: [ { position: 40 } ] }       
+    Material;
+@EndUserText.label: 'Quantity' 
+@UI: {
+          lineItem:       [ { position: 41, importance: #MEDIUM } ],
+          identification: [ { position: 41 } ] }       
+    Quantity;
+@EndUserText.label: 'UOM'   
+@UI: {
+          lineItem:       [ { position: 42, importance: #MEDIUM } ],
+          identification: [ { position: 42 } ] }     
+    Uom;
+@EndUserText.label: 'Plant' 
+@UI: {
+          lineItem:       [ { position: 43, importance: #MEDIUM } ],
+          identification: [ { position: 43 } ] }       
+    Plant;
+@EndUserText.label: 'ZVin'    
+@UI: {
+          lineItem:       [ { position: 50, importance: #MEDIUM } ],
+          identification: [ { position: 50 } ] }    
+    Zvin;
+@EndUserText.label: 'Model Year'  
+@UI: {
+          lineItem:       [ { position: 51, importance: #MEDIUM } ],
+          identification: [ { position: 51 } ] }      
+    ModelYear;
+@EndUserText.label: 'Ztrim' 
+@UI: {
+          lineItem:       [ { position: 52, importance: #MEDIUM } ],
+          identification: [ { position: 52 } ] }       
+    ZTrim;
+@EndUserText.label: 'Zip'   
+@UI: {
+          lineItem:       [ { position: 53, importance: #MEDIUM } ],
+          identification: [ { position: 53 } ] }     
+    Zip;
+@EndUserText.label: 'SellSource'  
+@UI: {
+          lineItem:       [ { position: 60, importance: #MEDIUM } ],
+          identification: [ { position: 60 } ] }      
+    SellSource;
+@EndUserText.label: 'Incentive code'   
+@UI: {
+          lineItem:       [ { position: 61, importance: #MEDIUM } ],
+          identification: [ { position: 61 } ] }     
+    IncentiveCode;
+@EndUserText.label: 'SiteCode'   
+@UI: {
+          lineItem:       [ { position: 62, importance: #MEDIUM } ],
+          identification: [ { position: 62 } ] }     
+    SiteCode;
+@EndUserText.label: 'Country'  
+@UI: {
+          lineItem:       [ { position: 63, importance: #MEDIUM } ],
+          identification: [ { position: 63 } ] }      
+    Country;
+@EndUserText.label: 'Payee'   
+@UI: {
+          lineItem:       [ { position: 64, importance: #MEDIUM } ],
+          identification: [ { position: 64 } ] }     
+    Payee;
+    
+}

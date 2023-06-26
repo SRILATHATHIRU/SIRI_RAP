@@ -1,0 +1,22 @@
+managed; //implementation in class zbp_i_rap_demo_view unique;
+
+define behavior for ZI_RAP_DEMO_VIEW //alias <alias_name>
+persistent table zrap_demo_table
+lock master
+//authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  // administrative fields: read only
+  field ( readonly ) last_changed_at, last_changed_by, created_at, created_by;
+   mapping for ZRAP_DEMO_TABLE
+  {
+  Id = Id;
+  firstname = first_name;
+  lastname = last_name;
+  begindate = begin_date;
+  enddate =      end_date;
+  }
+}

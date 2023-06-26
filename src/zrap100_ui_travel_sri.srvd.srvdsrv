@@ -1,0 +1,4 @@
+@EndUserText.label: 'Travel Service'
+define service ZRAP100_UI_Travel_SRI {
+  expose ZRAP100_C_TRAVELTP_sri as Travel;
+}

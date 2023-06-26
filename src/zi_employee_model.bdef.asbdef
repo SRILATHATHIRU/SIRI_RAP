@@ -1,0 +1,23 @@
+managed; //implementation in class zbp_i_employee_model unique;
+//strict ( 2 );
+
+define behavior for ZI_EMPLOYEE_MODEL //alias <alias_name>
+persistent table ZRAP_DEMO_TABLE
+lock master
+//authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  // administrative fields: read only
+  field ( readonly ) last_changed_at, last_changed_by, created_at, created_by;
+   mapping for ZRAP_DEMO_TABLE
+  {
+  Id = Id;
+  first_name = first_name;
+  last_name = last_name;
+  begin_date = begin_date;
+  end_date =      end_date;
+  }
+}

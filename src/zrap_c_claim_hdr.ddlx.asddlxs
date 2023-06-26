@@ -1,0 +1,116 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Claim Processing', 
+    typeNamePlural: 'Claims Processing'
+  }
+}
+annotate view ZRAP_C_CLAIM_HDR
+    with 
+{
+  @UI.facet: [ { id:            'Header',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Header',
+                 position:      10 },
+               { id:            'Item',
+                 purpose:       #STANDARD,
+                 type:          #LINEITEM_REFERENCE,
+                 label:         'Item',
+                 position:      20,
+                 targetElement: '_Item'}] 
+  @UI.lineItem: [ {
+    position: 10 , 
+    importance: #MEDIUM
+  } ]
+  @UI.identification: [ {
+    position: 10 
+  } ]
+   @UI.selectionField: [ {
+    position: 10 
+  } ]
+  ClaimNumber;
+@EndUserText.label: 'Claim Type'   
+ @UI: {
+          lineItem:       [ { position: 20, importance: #MEDIUM } ],
+          identification: [ { position: 20 } ] }    
+    ClaimType;
+ @UI: {
+          lineItem:       [ { position: 30, importance: #MEDIUM } ],
+          identification: [ { position: 30, label: 'Customer' } ] }   
+@Consumption.valueHelpDefinition: [{
+
+               entity: {
+                   name: '/DMO/I_Customer',
+                   element: 'CustomerID'
+               }}]          
+    Customer;
+@Search.defaultSearchElement: true
+@EndUserText.label: 'Vin'  
+@UI: {
+          lineItem:       [ { position: 40, importance: #MEDIUM } ],
+          identification: [ { position: 40 } ] }      
+    Vin;
+@UI: {
+          lineItem:       [ { position: 41, importance: #MEDIUM } ],
+          identification: [ { position: 41 } ] }       
+@EndUserText.label: 'Sales .Org'        
+    SalesOrg;
+@UI: {
+          lineItem:       [ { position: 42, importance: #MEDIUM } ],
+          identification: [ { position: 42 } ] }       
+@EndUserText.label: 'Dist Channel' 
+    DistChannel;
+@UI: {
+          lineItem:       [ { position: 43, importance: #MEDIUM } ],
+          identification: [ { position: 43 } ] }       
+@EndUserText.label: 'Division'     
+    Division;
+@UI: {
+          lineItem:       [ { position: 50, importance: #MEDIUM } ],
+          identification: [ { position: 50 } ] }       
+@EndUserText.label: 'Bundle Number'     
+    BundleNumber;
+@UI: {
+          lineItem:       [ { position: 51, importance: #MEDIUM } ],
+          identification: [ { position: 51 } ] }  
+ @Consumption.valueHelpDefinition: [{
+
+             entity: {
+                 name: 'I_Currency',
+                 element: 'Currency'
+             }}]               
+@EndUserText.label: 'Currency'      
+    Currency;
+@UI: {
+          lineItem:       [ { position: 52, importance: #MEDIUM } ],
+          identification: [ { position: 52 } ] }       
+@EndUserText.label: 'RefNumber'    
+    RefNumber;
+@EndUserText.label: 'Batch'  
+@UI: {
+          lineItem:       [ { position: 53, importance: #MEDIUM } ],
+          identification: [ { position: 53 } ] }     
+    Batch;
+@EndUserText.label: 'Claim Date'   
+@UI: {
+          lineItem:       [ { position: 54, importance: #MEDIUM } ],
+          identification: [ { position: 54 } ] }     
+    ClaimDate;
+@EndUserText.label: 'Transimission Date'   
+@UI: {
+          lineItem:       [ { position: 55, importance: #MEDIUM } ],
+          identification: [ { position: 55 } ] }   
+    TransmissionDate;
+@EndUserText.label: 'Claim Source'   
+@UI: {
+          lineItem:       [ { position: 60, importance: #MEDIUM } ],
+          identification: [ { position: 60 } ] }     
+    ClaimSource;
+@UI: {
+          lineItem:       [ { position: 52, importance: #MEDIUM } ],
+          identification: [ { position: 52 } ] }      
+@EndUserText.label: 'Amount'     
+    Subamt;
+    
+}
